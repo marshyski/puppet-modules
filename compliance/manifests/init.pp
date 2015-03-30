@@ -10,4 +10,5 @@ class compliance {
   include compliance::services
   include compliance::packages
   include compliance::pam
+  include compliance::root
 }
