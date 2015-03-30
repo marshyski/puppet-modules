@@ -20,4 +20,9 @@ class aws_config {
     require => File['/root/.aws'],
   }
 
+  file { '/etc/environment':
+    ensure  => present,
+    content => template('aws_config/environment.erb')
+  }
+
 }

@@ -90,5 +90,30 @@ class compliance::fileperms {
     owner    => root,
     group    => root, 
     mode     => 444;
-    }
+  '/etc/cron.d':
+    owner   => root,
+    group   => root,
+    recurse => true,
+    mode    => '0700';
+  '/etc/cron.daily':
+    owner   => root,
+    group   => root,
+    recurse => true,
+    mode    => '0700';
+  '/etc/cron.hourly':
+    owner   => root,
+    group   => root,
+    recurse => true,
+    mode    => '0700';
+  '/etc/cron.monthly':
+    owner   => root,
+    group   => root,
+    recurse => true,
+    mode    => '0700';
+  '/etc/cron.weekly':
+    owner   => root,
+    group   => root,
+    recurse => true,
+    mode    => '0700';
+  }
 }

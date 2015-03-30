@@ -47,4 +47,13 @@ class compliance::services {
       ensure => stopped,
       enable => false,
   }
+
+  service {
+    [
+    'crond',
+    'atd',  
+    ]:
+      ensure => running,
+      enable => true,
+  }
 }
