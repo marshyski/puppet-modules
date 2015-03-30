@@ -38,10 +38,15 @@ class jenkins(
     Require  => User[$jenkins_user],
   }
 
+  package { 'java-1.7.0-openjdk':
+    ensure   => latest,
+    provider => yum,
+  }
+
   package { 'jenkins':
     ensure   => $version,
-    provider => 'yum',
-    require  => Yumrepo['jenkins'],
+    provider => yum,
+    require  => [Yumrepo['jenkins'],Package['java-1.7.0-openjdk']],
   }
 
   file  { '/var/log/jenkins':
