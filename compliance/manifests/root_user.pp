@@ -1,4 +1,4 @@
-class root {
+class root_user {
 
 # Manage root account
   user  { 'root':
