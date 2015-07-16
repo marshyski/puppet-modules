@@ -21,7 +21,6 @@ class compliance::packages {
     'wireshark',
     'setroubleshoot',
     'acpid',
-    'ypbind',
     'octive',
     'rdate',
     'gnome-games',
@@ -37,4 +36,11 @@ class compliance::packages {
     ]:
       ensure => absent,
   }
+
+ # Remove ypbind and yp-tools
+  exec { 'remove ypbind':
+    command => '/usr/bin/yum remove -y ypbind',
+    onlyif  => '/bin/rpm -qa | /bin/grep -i ^ypbind',
+  }
+
 }
