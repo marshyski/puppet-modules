@@ -1,6 +1,8 @@
 class root_user {
 
 # Manage root account
+# Generate hash openssl passwd -1 'U)x1OwBkH-&pAV@{Qc|0vp!@j!%?esUjIi)C_!cICZZTQu?2_eND2j5_W1avJIgw'
+# Password is U)x1OwBkH-&pAV@{Qc|0vp!@j!%?esUjIi)C_!cICZZTQu?2_eND2j5_W1avJIgw
   user  { 'root':
     ensure     => present,
     uid        => '0',
@@ -8,6 +10,7 @@ class root_user {
     shell      => '/bin/bash',
     home       => '/root',
     managehome => true,
+    password   => '$1$rK9Smsqa$KvNaMUR0JB1QxMWawj3UP.',
   }
 
   file { '/root':
